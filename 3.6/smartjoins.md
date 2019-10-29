@@ -289,10 +289,10 @@ The SmartJoins optimization is currently triggered only for data selection queri
 but not for any data-manipulation operations such as INSERT, UPDATE, REPLACE, REMOVE
 or UPSERT, neither traversals or subqueries.
 
-It will only be applied when joining collections or vies with an identical
+It will only be applied when joining collections or Views with an identical
 sharding setup. This requires all involved but one collection to be created
 with its *distributeShardsLike* attribute pointing to the collection that is
-the exception. All collections forming a view must be shared in the same way
+the exception. All collections forming a view must be sharded in the same way,
 otherwise the view is not eligible. 
 
 It is restricted to be used with simple shard key attributes (such as `_key`, `productId`),
