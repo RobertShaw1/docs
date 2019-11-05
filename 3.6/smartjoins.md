@@ -1,6 +1,6 @@
 ---
 layout: default
-description: SmartJoins allow to execute co-located join operations among identically sharded collections or views.
+description: SmartJoins allow to execute co-located join operations among identically sharded collections and Views.
 title: SmartJoins for ArangoDB Clusters
 redirect_from:
   - /3.6/smart-joins.html # 3.4 -> 3.4
@@ -16,7 +16,8 @@ SmartJoins are only available in the
 also available as [**managed service**](https://www.arangodb.com/managed-service/){:target="_blank"}.
 {% endhint %}
 
-SmartJoins allow to execute co-located join operations among identically sharded collections or views.
+SmartJoins allow to execute co-located join operations among identically sharded collections
+and Views (if the underlying collections are eligible).
 
 Cluster joins without being smart
 ---------------------------------
@@ -203,7 +204,7 @@ and even for non-unique shard key values, e.g.:
 
 {% hint 'tip' %}
 All above examples used two collections only. SmartJoins will also work when joining
-more than two collections or views which have the same data distribution enforced via their
+more than two collections/Views which have the same data distribution enforced via their
 `distributeShardsLike` attribute and using the shard keys as the join criteria as shown above.
 {% endhint %}
 
@@ -289,7 +290,7 @@ The SmartJoins optimization is currently triggered only for data selection queri
 but not for any data-manipulation operations such as INSERT, UPDATE, REPLACE, REMOVE
 or UPSERT, neither traversals or subqueries.
 
-It will only be applied when joining collections or Views with an identical
+It will only be applied when joining collections/Views with an identical
 sharding setup. This requires all involved but one collection to be created
 with its *distributeShardsLike* attribute pointing to the collection that is
 the exception. All collections forming a view must be sharded in the same way,
